@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:rawhide
+FROM registry.fedoraproject.org/fedora:28
 LABEL \
     name="dmoluguw/pki-maintainer:f-rawhide" \
     maintainer="Dinesh Prasanth M K <dmoluguw@redhat.com>" 
