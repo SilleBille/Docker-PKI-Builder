@@ -1,17 +1,18 @@
 FROM registry.fedoraproject.org/fedora:28
 LABEL \
-    name="dmoluguw/pki-maintainer:f-rawhide" \
+    name="dmoluguw/pki-maintainer:f28" \
     maintainer="Dinesh Prasanth M K <dmoluguw@redhat.com>" 
 
 # PYTHONCOERCECLOCALE warning
 ENV LC_ALL=C.UTF-8
 
+# Install required packages
+RUN dnf install -y git dnf-plugins-core vim rpm-build && \
+    dnf copr enable -y @pki/10.6
+
 # Update your base image without conflicts
 RUN dnf -y update --best --allowerasing \
     && dnf clean all
-
-# Install required packages
-RUN dnf install -y git dnf-plugins-core vim
 
 # To avoid RPM errors
 RUN ls /var/lib/rpm/ \

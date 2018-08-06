@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora:rawhide
+FROM registry.fedoraproject.org/fedora:27
 LABEL \
-    name="dmoluguw/pki-maintainer:f-rawhide" \
+    name="dmoluguw/pki-maintainer:f27" \
     maintainer="Dinesh Prasanth M K <dmoluguw@redhat.com>" 
 
 # PYTHONCOERCECLOCALE warning
@@ -32,3 +32,4 @@ EXPOSE 389 8080 8443
 VOLUME [ "/sys/fs/cgroup", "/tmp", "/run" ]
 STOPSIGNAL SIGRTMIN+3
 ENTRYPOINT [ "/usr/sbin/init" ]
+
